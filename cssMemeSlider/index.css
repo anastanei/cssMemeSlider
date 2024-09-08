@@ -4,6 +4,9 @@
   --slider-width-desktop: 70vw;
   --footer-width-mobile: calc(100vw - 2 * var(--padding));
   --footer-width-desktop: calc(70vw + 4rem);
+  --red: #f21b18;
+  --yellow: #f8b746;
+  --blue: #1ab2f4;
 }
 
 html {
@@ -120,6 +123,16 @@ input[type='radio'] {
 }
 
 .label {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease-out;
+}
+
+.label span {
   display: block;
   width: 1rem;
   height: 1rem;
@@ -127,20 +140,56 @@ input[type='radio'] {
   border-radius: 50%;
 }
 
-.label-1, .label-4 {
-  background-color: #f11a16;
+.label:active {
+  background-color: black;
+  outline: none;
 }
 
-.label-2 {
-  background-color: #1ab2f4;
+.label-1:hover,
+.label-4:hover {
+  background-color: rgba(241, 26, 22, 0.5);
 }
 
-.label-3 {
-  background-color: #f8b746;
+.label-2:hover {
+  background-color: rgba(26, 178, 244, 0.5);
 }
 
-.slides {
+.label-3:hover {
+  background-color: rgba(248, 183, 70, 0.5);
+}
 
+.label-1:active, .label-4:active {
+  background-color: var(--red);
+}
+
+.label-2:active {
+  background-color: var(--blue);
+}
+
+.label-3:active {
+  background-color: var(--yellow);
+}
+
+.label-1 span, .label-4 span{
+  background-color: var(--red);
+  outline: 0.2rem solid var(--red);
+}
+
+.label-2 span {
+  background-color: var(--blue);
+  outline: 0.2rem solid var(--blue);
+}
+
+.label-3 span {
+  background-color: var(--yellow);
+  outline: 0.2rem solid var(--yellow);
+}
+
+.control-1:checked~.footer .controls .label-1 span, 
+.control-2:checked~.footer .controls .label-2 span, 
+.control-3:checked~.footer .controls .label-3 span, 
+.control-4:checked~.footer .controls .label-4 span {
+  background-color: transparent;
 }
 
 .control-1:checked~.wrapper .slider .slides {
