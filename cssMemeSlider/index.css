@@ -1,0 +1,137 @@
+:root {
+  --padding: 2rem;
+  --slider-width-mobile: calc(100vw - 4 * var(--padding));
+  --slider-width-desktop: 70vw;
+  --footer-width-mobile: calc(100vw - 2 * var(--padding));
+  --footer-width-desktop: calc(70vw + 4rem);
+}
+
+html {
+  background-color: #B074E9;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h2 {
+  margin: 0;
+}
+
+main {
+  /* max-width: 80%; */
+  min-height: 100vh;
+  /* width: 100vw; */
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  padding: 0 var(--padding);
+}
+
+.wrapper {
+  margin-bottom: 1rem;
+  padding-top: var(--padding);
+  padding-bottom: var(--padding);
+  box-shadow: 0 0.625rem 1.25rem rgba(0, 0, 0, 0.19), 0 0.375rem 0.375rem rgba(0, 0, 0, 0.23);
+  background-color: #F3F74D;
+  border-radius: 0.5rem;
+}
+
+.slider, .slide, .meme {
+  width: var(--slider-width-mobile);
+  @media (min-width: 768px) {
+    max-width: var(--slider-width-desktop);
+  }
+}
+
+.slider {
+  overflow: hidden;
+}
+
+.slides {
+  display: flex;
+
+  transition: all 1s ease-out;
+}
+
+.slide {
+}
+
+.meme {
+  border-radius: 0.5rem;
+}
+
+.footer {
+  width: var(--footer-width-mobile);
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  background-color: white;
+  box-shadow: 0 0.625rem 1.25rem rgba(0, 0, 0, 0.19), 0  0.375rem 0.375rem rgba(0, 0, 0, 0.23);
+
+
+  @media (min-width: 768px) {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: flex-start;
+    /* flex-direction: column;  */
+    max-width: var(--footer-width-desktop);
+  }
+}
+
+input[type='radio'] {
+  display: none;
+}
+
+.controls {
+  width: fit-content;
+  margin: 0 auto;
+  display: flex;
+
+  @media (min-width: 768px) {
+    margin: 0;
+  }
+}
+
+.label {
+  display: block;
+  width: 1rem;
+  height: 1rem;
+  border: none;
+  border-radius: 50%;
+}
+
+.label-1, .label-4 {
+  background-color: #f11a16;
+}
+
+.label-2 {
+  background-color: #1ab2f4;
+}
+
+.label-3 {
+  background-color: #f8b746;
+}
+
+
+.control-1:checked~.slides {
+  transform: translateX(0);
+}
+
+.control-2:checked~.slides {
+  transform: translateX(-100%);
+
+}
+
+.control-3:checked~.slides {
+  transform: translateX(-200%);
+}
+
+.control-4:checked~.slides {
+  transform: translateX(-300%);
+}
