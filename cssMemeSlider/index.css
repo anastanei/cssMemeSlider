@@ -1,9 +1,9 @@
 :root {
   --padding: 2rem;
   --slider-width-mobile: calc(100vw - 4 * var(--padding));
-  --slider-width-desktop: 70vw;
+  --slider-width-desktop: 55vw;
   --footer-width-mobile: calc(100vw - 2 * var(--padding));
-  --footer-width-desktop: calc(70vw + 4rem);
+  --footer-width-desktop: calc(55vw + 4rem);
   --red: #f21b18;
   --yellow: #f8b746;
   --blue: #1ab2f4;
