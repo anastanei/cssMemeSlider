@@ -19,9 +19,7 @@ h2 {
 }
 
 main {
-  /* max-width: 80%; */
   min-height: 100vh;
-  /* width: 100vw; */
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -55,11 +53,35 @@ main {
 
 .slides {
   display: flex;
-
   transition: all 1s ease-out;
 }
 
 .slide {
+}
+
+.caption-wrapper {
+  width: 100%;
+}
+
+.captions {
+}
+
+.caption {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  transition: opacity 1s ease-in-out;
+  overflow: hidden;
+}
+
+.control-1:checked~.footer .caption-wrapper .captions .caption-1,
+.control-2:checked~.footer .caption-wrapper .captions .caption-2,
+.control-3:checked~.footer .caption-wrapper .captions .caption-3,
+.control-4:checked~.footer .caption-wrapper .captions .caption-4 {
+  height: auto;
+  width: 100%;
+  opacity: 100%;
+  transition: opacity 1s ease-in-out;
 }
 
 .meme {
@@ -79,7 +101,6 @@ main {
     flex-direction: row-reverse;
     justify-content: space-between;
     align-items: flex-start;
-    /* flex-direction: column;  */
     max-width: var(--footer-width-desktop);
   }
 }
@@ -118,20 +139,23 @@ input[type='radio'] {
   background-color: #f8b746;
 }
 
+.slides {
 
-.control-1:checked~.slides {
+}
+
+.control-1:checked~.wrapper .slider .slides {
   transform: translateX(0);
 }
 
-.control-2:checked~.slides {
+.control-2:checked~.wrapper .slider .slides {
   transform: translateX(-100%);
 
 }
 
-.control-3:checked~.slides {
+.control-3:checked~.wrapper .slider .slides {
   transform: translateX(-200%);
 }
 
-.control-4:checked~.slides {
+.control-4:checked~.wrapper .slider .slides {
   transform: translateX(-300%);
 }
