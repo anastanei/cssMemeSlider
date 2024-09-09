@@ -44,8 +44,11 @@ main {
 }
 
 .slider, .slide, .meme {
-  width: var(--slider-width-mobile);
+  min-width: var(--slider-width-mobile);
+  max-width: var(--slider-width-mobile);
+
   @media (min-width: 768px) {
+    min-width: var(--slider-width-desktop);
     max-width: var(--slider-width-desktop);
   }
 }
@@ -60,13 +63,31 @@ main {
 }
 
 .slide {
+  height: calc(0.83 * var(--slider-width-desktop));
+  background-image: url('./images/meme-2.webp');
+  background-size: cover;
+  background-position-x: center;
+  border-radius: 0.5rem;
+}
+
+.slide-1 {
+  background-image: url('./images/meme-1.webp');
+}
+
+.slide-2 {
+  background-image: url('./images/meme-2.webp');
+}
+
+.slide-3 {
+  background-image: url('./images/meme-3.webp');
+}
+
+.slide-4 {
+  background-image: url('./images/meme-4.webp');
 }
 
 .caption-wrapper {
   width: 100%;
-}
-
-.captions {
 }
 
 .caption {
@@ -87,12 +108,9 @@ main {
   transition: opacity 1s ease-in-out;
 }
 
-.meme {
-  border-radius: 0.5rem;
-}
-
 .footer {
   width: var(--footer-width-mobile);
+  min-height: 7rem;
   padding-top: 1rem;
   padding-bottom: 1rem;
   background-color: white;
